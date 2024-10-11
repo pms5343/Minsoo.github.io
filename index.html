@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive 동영상 자동 재생</title>
+    <style>
+        iframe {
+            width: 300px;
+            height: auto;
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-  <p>Hello, World!</p>
+    <h1>Google Drive 동영상 자동 재생 예시</h1>
+
+    <!-- Google Drive 동영상을 iframe으로 삽입 -->
+    <iframe id="video1" src="https://drive.google.com/file/d/1_zWyIoSrkkJzHD00Mm5KRWVEV_jSlT5v/preview" allow="autoplay"></iframe>
+    <iframe id="video2" src="https://drive.google.com/file/d/1_zWyIoSrkkJzHD00Mm5KRWVEV_jSlT5v/preview" allow="autoplay"></iframe>
+    <iframe id="video3" src="https://drive.google.com/file/d/1_zWyIoSrkkJzHD00Mm5KRWVEV_jSlT5v/preview" allow="autoplay"></iframe>
+
+    <script>
+        // Google Drive에서 자동 재생을 위해 autoplay 매개변수 추가
+        function setAutoplay(iframe) {
+            iframe.src += "&autoplay=1";
+        }
+
+        window.onload = function() {
+            setAutoplay(document.getElementById('video1'));
+            setAutoplay(document.getElementById('video2'));
+            setAutoplay(document.getElementById('video3'));
+        }
+    </script>
 </body>
 </html>
